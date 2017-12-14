@@ -1,0 +1,27 @@
+package bubble_sort;
+
+/**冒泡排序，从第一个元素开始，依次比较相邻两个元素的大小
+ * 最终选出最大(小)的排在最后
+ * 设有n元素,则第一次比较n-1次
+ */
+public class BubbleSort {
+    public static void bubble_sort(int arr[]){
+        for(int i = 0;i<arr.length-1;i++){
+            for(int j = 0;j<arr.length-1-i;j++){//因为每排序好一个元素，就相当于下一次少排序依次，所以在这里要 减 i!
+                int temp;
+                if(arr[j]>arr[j+1]){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+    }
+    public static void main(String args[]){
+        int arr[] = {12,34,4,6,98,15};
+        bubble_sort(arr);
+        for(int i = 0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
+}
