@@ -11,17 +11,15 @@ public class Change_BubbleSort {
     public static void change_bubble_sort(int arr[]){
         int i = arr.length-1;
         while(i>0){
-            int change;//设置标志
+            int change = 0;//设置标志
             for (int j = 0;j<i;j++){
                 if(arr[j]>arr[j+1]){
                     change = j;//记录最后一次交换的位置
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-                }else {
-                    change = 0;//如果是排好序的就退出循环
                 }
-                i = change;//因为最后一次的位置后肯定是排序好的 下一次扫描到最后依次的位置就停下来
+                i = change;//因为最后一次的位置后肯定是排序好的 下一次扫描到最后一次就交换数据的位置就停下来
             }
             for(int x = 0;x<arr.length;x++){
                 System.out.print(arr[x]+" ");
