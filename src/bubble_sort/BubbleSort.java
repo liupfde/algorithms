@@ -5,7 +5,7 @@ package bubble_sort;
  * 设有n元素,则第一次比较n-1次
  */
 public class BubbleSort {
-    public static void bubble_sort(int arr[]){
+    public static void bubble_sort0(int arr[]){
         for(int i = 0;i<arr.length-1;i++){
             for(int j = 0;j<arr.length-1-i;j++){//因为每排序好一个元素，就相当于下一次少排序依次，所以在这里要 减 i!
                 int temp;
@@ -13,15 +13,34 @@ public class BubbleSort {
                     temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
+                    for (int a:arr){
+                        System.out.print(a + " ");
+                    }
+                    System.out.println("--------------");
                 }
+            }
+        }
+    }
+
+    public static void bubbleSort1(int arr[]){
+        for(int i = 0;i<arr.length;i++){
+            for(int j = arr.length-2;j>=i;j--){
+                if(arr[j]>arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+                for(int a:arr){
+                    System.out.print(a+" ");
+                }
+                System.out.println("----------------");
             }
         }
     }
     public static void main(String args[]){
         int arr[] = {12,34,4,6,98,15};
-        bubble_sort(arr);
-        for(int i = 0;i<arr.length;i++){
-            System.out.println(arr[i]);
-        }
+        //bubble_sort0(arr);
+        System.out.println("我是分割线啊啊啊啊啊啊啊啊");
+        bubbleSort1(arr);
     }
 }
