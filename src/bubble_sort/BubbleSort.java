@@ -22,9 +22,12 @@ public class BubbleSort {
         }
     }
 
+    /**
+     * 上一个方法的等价实现
+     */
     public static void bubbleSort1(int arr[]){
         for(int i = 0;i<arr.length;i++){
-            for(int j = arr.length-2;j>=i;j--){
+            for(int j = arr.length-2;j>=i;j--){//j>=i 等同于上面方法相同位置的说明
                 if(arr[j]>arr[j+1]){
                     int temp = arr[j];
                     arr[j] = arr[j+1];
