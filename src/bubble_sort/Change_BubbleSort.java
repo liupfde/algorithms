@@ -27,7 +27,7 @@ public class Change_BubbleSort {
         }
     }
     public static void main(String args[]){
-        int arr[] = {12,34,4,6,98,15};
+        int arr[] = {1,23,4,5,76,34,2,2,2,13,78};
         change_bubble_sort(arr);
     }
 }
