@@ -18,11 +18,12 @@ public class Change_BubbleSort {
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
                     flag = true;
+                    for(int a:arr){
+                        System.out.print(a+" ");
+                    }
+                    System.out.println("----------------");
                 }
-                for(int a:arr){
-                    System.out.print(a+" ");
-                }
-                System.out.println("----------------");
+
             }
         }
     }

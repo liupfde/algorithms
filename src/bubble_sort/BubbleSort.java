@@ -32,16 +32,16 @@ public class BubbleSort {
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
+                    for(int a:arr){
+                        System.out.print(a+" ");
+                    }
+                    System.out.println("");
                 }
-                for(int a:arr){
-                    System.out.print(a+" ");
-                }
-                System.out.println("----------------");
             }
         }
     }
     public static void main(String args[]){
-        int arr[] = {12,34,4,6,98,15};
+        int arr[] = {1,23,4,5,76,34,2,2,2,13,78};
         //bubble_sort0(arr);
         System.out.println("我是分割线啊啊啊啊啊啊啊啊");
         bubbleSort1(arr);
