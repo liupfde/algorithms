@@ -30,10 +30,11 @@ public class SelectSort {
                 s[i] = s[min];
                 s[min] = temp;
             }
+            for (int x:s) {
+                System.out.print(x+" ");
+            }
+            System.out.println("");
         }
 
-        for (int i:s) {
-            System.out.print(i+" ");
-        }
     }
 }
