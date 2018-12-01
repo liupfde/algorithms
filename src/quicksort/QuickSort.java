@@ -141,6 +141,7 @@ public class QuickSort {
      */
     private static void  __quickSort3Ways(int[] arr,int l,int r){
 
+        //枢纽值
         int v = arr[l];
         //小于v的部分的第一个索引 一开始为空    arr[l+1...lt]<v
         int lt = l;
@@ -149,20 +150,18 @@ public class QuickSort {
         //arr[lt+1...i)==v  是正在考察的元素 不在数组内
         int i = l+1;
         while (i<gt){
-            if(arr[i]<v){
-                int temp = arr[lt+1];
-                arr[lt+1] = arr[i];
+            if (arr[i] < v) {
+                int temp = arr[lt + 1];
+                arr[lt + 1] = arr[i];
                 arr[i] = temp;
                 i++;
                 lt++;
-            }
-            else if(arr[i]>v){
+            } else if (arr[i] > v) {
                 int temp = arr[i];
-                arr[i] = arr[gt-1];
-                arr[gt-1] = temp;
+                arr[i] = arr[gt - 1];
+                arr[gt - 1] = temp;
                 gt--;
-            }
-            else {
+            } else {
                 //当前值等于v
                 i++;
             }
