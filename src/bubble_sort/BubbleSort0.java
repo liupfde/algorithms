@@ -5,6 +5,7 @@ package bubble_sort;
  * 冒泡排序的最初级写法
  * 交换排序
  * 不断的比较
+ * @author liupfde
  */
 public class BubbleSort0 {
     public static void main(String args[]){

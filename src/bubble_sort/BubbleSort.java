@@ -25,9 +25,10 @@ public class BubbleSort {
     /**
      * 上一个方法的等价实现
      */
-    public static void bubbleSort1(int arr[]){
+    public static void bubbleSort1(int[] arr){
         for(int i = 0;i<arr.length;i++){
-            for(int j = arr.length-2;j>=i;j--){//j>=i 等同于上面方法相同位置的说明
+            //j>=i 等同于上面方法相同位置的说明
+            for(int j = arr.length-2;j>=i;j--){
                 if(arr[j]>arr[j+1]){
                     int temp = arr[j];
                     arr[j] = arr[j+1];
@@ -41,7 +42,7 @@ public class BubbleSort {
         }
     }
     public static void main(String args[]){
-        int arr[] = {1,23,4,5,76,34,2,2,2,13,78};
+        int[] arr = {1,23,4,5,76,34,2,2,2,13,78};
         //bubble_sort0(arr);
         System.out.println("我是分割线啊啊啊啊啊啊啊啊");
         bubbleSort1(arr);

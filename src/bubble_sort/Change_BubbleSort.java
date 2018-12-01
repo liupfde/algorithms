@@ -32,9 +32,3 @@ public class Change_BubbleSort {
         change_bubble_sort(arr);
     }
 }
-/**
- *这个改进的算法还有一些 bug 目前能力有限  留待日后解决
- *
- * 重写代码，与上一次的思路有所区别
- * 现在想来 上一次的思路可能是错误的
- */
