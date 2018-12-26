@@ -12,16 +12,16 @@ public class QuickSort {
      * 但枢纽值必须位于数组的第一个位置
      */
     public static void main(String[] args){
-        int[] arr = {50,10,90,30,70,40,80,60,20};
-        int[] arr1 = {23,23,15,6,74,42,3,1,98};
+        int[] arr = {20,15,14,18,21,36,40,10};
+        int[] arr1 = {20,15,14,18,21,36,40,10};
 
         //选取随机枢纽值
-        int rand = (int)(Math.random()*arr1.length);
-        int temp = arr1[rand];
-        arr1[rand] = arr1[0];
-        arr1[0] = temp;
+//        int rand = (int)(Math.random()*arr1.length);
+//        int temp = arr1[rand];
+//        arr1[rand] = arr1[0];
+//        arr1[0] = temp;
 
-        __fasterSort(arr1,0,arr1.length-1);
+        quickSort(arr1,0,arr1.length-1);
         System.out.println(Arrays.toString(arr1));
     }
 
@@ -29,20 +29,18 @@ public class QuickSort {
      * @param arr
      * 对arr[l...r] 前闭后闭的区间进行排序
      */
-    public static void quickSort(int[] arr,int l,int r){
+    public static void quickSort(int[] arr, int l, int r) {
         //在此可使用插入排序优化
-        if(l>=r){
+        if (l >= r) {
             return;
         }
-//        int partition = __quickSort(arr,l,r);
-        //int partition = __fasterSort(arr,l,r);
+        int partition = __quickSort(arr, l, r);
 
-//        System.out.println(partition);
-//        quickSort(arr,l,partition-1);
-//        quickSort(arr,partition+1,r);
+        quickSort(arr, l, partition - 1);
+        quickSort(arr, partition + 1, r);
 
         //三路快排的partition并不是一个  不方便返回 直接在函数内递归处理
-        __quickSort3Ways(arr,l,r);
+        //__quickSort3Ways(arr,l,r);
     }
 
     /**
