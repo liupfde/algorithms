@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author liupfde
  */
 public class MergeSort {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int[] a = {50, 10, 90, 30, 70, 40, 80, 60, 20};
         mergeSort(a, 0, a.length - 1);
         System.out.println(Arrays.toString(a));
