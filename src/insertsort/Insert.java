@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class Insert {
     public static void main(String args[]){
-        int a[] = {1,2,7,8,4};
+        int[] a = {1,7,2,8,4};
         insertSort(a);
         System.out.println(Arrays.toString(a));
     }

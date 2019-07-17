@@ -1,4 +1,4 @@
-package leetCode.array;
+package leetcode.array;
 
 /**
  * leetCode第75号题目

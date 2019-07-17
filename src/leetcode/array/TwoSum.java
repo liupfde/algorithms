@@ -1,6 +1,4 @@
-package leetCode.array;
-
-import java.util.Arrays;
+package leetcode.array;
 
 /**
  * leetCode第167号题目

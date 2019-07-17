@@ -13,16 +13,15 @@ public class QuickSort {
      */
     public static void main(String[] args){
         int[] arr = {20,15,14,18,21,36,40,10};
-        int[] arr1 = {20,15,14,18,21,36,40,10};
 
         //选取随机枢纽值
-//        int rand = (int)(Math.random()*arr1.length);
-//        int temp = arr1[rand];
-//        arr1[rand] = arr1[0];
-//        arr1[0] = temp;
+        int rand = (int) (Math.random() * arr.length);
+        int temp = arr[rand];
+        arr[rand] = arr[0];
+        arr[0] = temp;
 
-        quickSort(arr1,0,arr1.length-1);
-        System.out.println(Arrays.toString(arr1));
+        quickSort(arr,0,arr.length-1);
+        System.out.println(Arrays.toString(arr));
     }
 
     /**
@@ -40,7 +39,7 @@ public class QuickSort {
         quickSort(arr, partition + 1, r);
 
         //三路快排的partition并不是一个  不方便返回 直接在函数内递归处理
-        //__quickSort3Ways(arr,l,r);
+        //quickSort3Ways(arr,l,r);
     }
 
     /**
@@ -75,7 +74,6 @@ public class QuickSort {
                 arr[j+1] = arr[i];
                 arr[i] = temp;
                 j++;
-                //以上两行代码可以合并为swap(arr[++j],arr[i])
             }
         }
         int temp = arr[l];
@@ -90,21 +88,21 @@ public class QuickSort {
      * 这种方式是两边扫描 与三路快排的排序思想不一样 所以 j=l+1 而不是j=l
      * 三路快排那种和最原始的排序方式有点相似  不过他是分成了三部分 而不是从一端判断
      */
-    private static int __fasterSort(int[] arr,int l,int r){
+    private static int __fasterSort(int[] arr, int l, int r) {
         //待排序数组的第一个元素
         int v = arr[l];
         //数组排序时左边的第一个元素 它的范围是arr[l+1...j-1]
-        int j = l+1;
+        int j = l + 1;
         //数组从右边扫描时的第一个元素 它的范围是arr[i...r]
         int i = r;
-        while (true){
-            while (j<=r&&arr[j]<v){
+        while (true) {
+            while (j <= r && arr[j] < v) {
                 j++;
             }
-            while (i>=l+1&&arr[i]>v){
+            while (i >= l + 1 && arr[i] > v) {
                 i--;
             }
-            if(j>i){
+            if (j > i) {
                 break;
             }
             int temp = arr[j];
@@ -137,17 +135,17 @@ public class QuickSort {
      * @param r
      * @return
      */
-    private static void  __quickSort3Ways(int[] arr,int l,int r){
+    private void  quickSort3Ways(int[] arr,int l,int r){
 
         //枢纽值
         int v = arr[l];
         //小于v的部分的第一个索引 一开始为空    arr[l+1...lt]<v
         int lt = l;
         //大于v的索引  一开始为空 arr[gt...r]>v
-        int gt = r+1;
+        int gt = r + 1;
         //arr[lt+1...i)==v  是正在考察的元素 不在数组内
-        int i = l+1;
-        while (i<gt){
+        int i = l + 1;
+        while (i < gt) {
             if (arr[i] < v) {
                 int temp = arr[lt + 1];
                 arr[lt + 1] = arr[i];
@@ -168,7 +166,7 @@ public class QuickSort {
         arr[l] = arr[lt];
         arr[lt] = temp;
         //partition并不是唯一的所以在本方法中递归调用
-        __quickSort3Ways(arr,l,lt-1);
-        __quickSort3Ways(arr,gt,r);
+        quickSort3Ways(arr,l,lt-1);
+        quickSort3Ways(arr,gt,r);
     }
 }

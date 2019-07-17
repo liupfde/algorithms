@@ -46,21 +46,21 @@ public class MaxHeap {
         return this.count;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return count == 0;
     }
 
-    public void insert(int e){
-        if(count == data.length){
-            resize(2*data.length);
+    public void insert(int e) {
+        if (count == data.length) {
+            resize(2 * data.length);
         }
-        data[count+1] = e;
+        data[count + 1] = e;
         count++;
         siftUp(count);
     }
 
-    public int extractMax(){
-        if(count<0){
+    public int extractMax() {
+        if (count < 0) {
             throw new RuntimeException("数组容量错误");
         }
         int i = data[1];
@@ -79,27 +79,26 @@ public class MaxHeap {
      * 若不符合 则上移
      * @param k
      */
-    private void siftUp(int k){
-        while (k>1&&data[k]>data[k/2]){
-            int temp;
-            temp = data[k];
-            data[k] = data[k/2];
-            data[k/2] = temp;
+    private void siftUp(int k) {
+        while (k > 1 && data[k] > data[k / 2]) {
+            int temp = data[k];
+            data[k] = data[k / 2];
+            data[k / 2] = temp;
             k /= 2;
         }
     }
 
-    private void siftDown(int k){
+    private void siftDown(int k) {
         //当前k这个结点应该有孩子 在一个完全二叉树中 只要有左孩子就一定有孩子
-        while(2*k <= count){
+        while (2 * k <= count) {
             //j表示当前的父节点要与孩子交换的孩子结点
-            int j = 2*k;
+            int j = 2 * k;
             //如果右孩子存在且右孩子比左孩子大
-            if(j+1 <= count && data[j+1] > data[j]){
+            if (j + 1 <= count && data[j + 1] > data[j]) {
                 //让j等于右孩子
                 j += 1;
             }
-            if(data[k] > data[j]){
+            if (data[k] > data[j]) {
                 break;
             }
 
@@ -111,9 +110,9 @@ public class MaxHeap {
         }
     }
 
-    private void resize(int newCapacity){
+    private void resize(int newCapacity) {
         int[] newData = new int[newCapacity];
-        for (int i = 0;i<data.length;i++){
+        for (int i = 0; i < data.length; i++) {
             newData[i] = data[i];
         }
         data = newData;
